@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#2563eb" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="MCT Labs" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+    
+    <!-- Primary Meta Tags -->
+    <title>MCT Labs - AI-Powered Creativity Hub</title>
+    <meta name="description" content="MCT Labs is an AI-powered creativity hub, offering advanced AI models for innovation, design, and seamless digital experiences. Explore the future of AI today!">
+    <meta name="keywords" content="AI-powered, creativity, AI models, AI tools, artificial intelligence, innovation, digital creativity, AI platform">
+    <meta name="author" content="MCT Labs">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="MCT Labs - AI-Powered Creativity Hub">
+    <meta property="og:description" content="Explore AI-powered creativity with MCT Labs! Unlock advanced AI models for innovation and digital excellence.">
+    <meta property="og:image" content="https://mctlabs.tech/assets/images/preview.jpg">
+    <meta property="og:url" content="https://mctlabs.tech">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MCT Labs - AI-Powered Creativity Hub">
+    <meta name="twitter:description" content="MCT Labs is the ultimate AI-powered creativity platform. Experience the future of AI innovation!">
+    <meta name="twitter:image" content="https://mctlabs.tech/assets/images/preview.jpg">
+
+    <!-- Google Fonts - Tiro Bangla -->
+    <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('ServiceWorker registration successful');
+            })
+            .catch(err => {
+              console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>

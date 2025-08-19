@@ -1,0 +1,405 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add these styles to the existing index.css file */
+.mac-window {
+  @apply bg-white/90 backdrop-blur-lg shadow-2xl;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mac-titlebar {
+  @apply flex items-center gap-2 px-4 py-3;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mac-button {
+  @apply w-3 h-3 rounded-full;
+}
+
+.mac-button-red {
+  @apply bg-red-500;
+}
+
+.mac-button-yellow {
+  @apply bg-yellow-500;
+}
+
+.mac-button-green {
+  @apply bg-green-500;
+}
+
+.mac-editor {
+  @apply rounded-lg overflow-hidden;
+  background: #1a1a1a;
+}
+
+.mac-terminal {
+  @apply rounded-lg overflow-hidden;
+  background: #1a1a1a;
+}
+
+/* Add to existing terminal styles */
+.terminal-container {
+  @apply rounded-lg;
+  padding: 0.5rem;
+}
+
+/* Recording waves animation */
+.recording-wave {
+  @apply absolute inset-0 rounded-full;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  animation: recording-wave 2s infinite;
+}
+
+.recording-wave-2 {
+  animation-delay: 0.5s;
+}
+
+.recording-wave-3 {
+  animation-delay: 1s;
+}
+
+@keyframes recording-wave {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Mode button styles - UPDATED */
+.mode-button-stable {
+  background: linear-gradient(to right, #2563eb, #1d4ed8);
+}
+
+.mode-button-beta {
+  background: linear-gradient(to right, #9333ea, #7e22ce);
+}
+
+.mode-button-advanced {
+  background: linear-gradient(to right, #f97316, #ea580c);
+}
+
+/* Enhanced scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(243, 244, 246, 0.8);
+  border-radius: 8px;
+  margin: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #6366f1);
+  border-radius: 8px;
+  border: 3px solid rgba(243, 244, 246, 0.8);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2563eb, #4f46e5);
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Code block styles */
+.code-block {
+  @apply my-4 rounded-lg overflow-hidden bg-gray-900;
+}
+
+.code-header {
+  @apply px-4 py-2 bg-gray-800 text-gray-300 text-xs font-mono border-b border-gray-700;
+}
+
+.code-language {
+  @apply text-blue-400 font-medium;
+}
+
+.code-block pre {
+  @apply m-0 p-4 overflow-x-auto;
+}
+
+.code-block code {
+  @apply font-mono text-sm;
+}
+
+.code-block .line {
+  @apply block;
+  min-height: 1rem;
+}
+
+/* Mathematical formatting styles */
+.math-display-wrapper {
+  @apply my-6 flex justify-center;
+}
+
+.math-inline-wrapper {
+  @apply inline-block mx-1;
+}
+
+.math-display {
+  @apply my-6 flex justify-center;
+}
+
+.math-equation {
+  @apply bg-blue-50 border border-blue-200 rounded-lg px-6 py-4 font-mono text-lg text-center shadow-sm;
+  font-family: 'Computer Modern', 'Times New Roman', serif;
+  line-height: 1.6;
+}
+
+.math-inline {
+  @apply bg-blue-50 border border-blue-200 rounded px-2 py-1 font-mono text-sm;
+  font-family: 'Computer Modern', 'Times New Roman', serif;
+}
+
+.math-error {
+  @apply bg-red-50 border border-red-200 rounded px-2 py-1 text-red-600 font-mono text-sm;
+}
+
+.math-answer-box {
+  @apply my-6 flex justify-center;
+}
+
+.math-answer-content {
+  @apply bg-gradient-to-r from-green-100 to-emerald-100 border-2 border-green-500 rounded-lg px-6 py-4 text-xl font-bold text-green-800 shadow-lg;
+  font-family: 'Computer Modern', 'Times New Roman', serif;
+  display: inline-block;
+  min-width: 80px;
+  text-align: center;
+}
+
+.solution-step {
+  @apply my-6 bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden;
+}
+
+.step-header {
+  @apply bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-3 flex items-center gap-3;
+}
+
+.step-number {
+  @apply bg-white text-blue-600 rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm;
+}
+
+.step-title {
+  @apply font-semibold text-lg;
+}
+
+.step-content {
+  @apply p-4 space-y-3;
+}
+
+.matrix-container {
+  @apply inline-flex items-center my-4;
+}
+
+.matrix-bracket {
+  @apply text-4xl font-thin text-gray-700;
+  font-family: 'Computer Modern', 'Times New Roman', serif;
+}
+
+.matrix-bracket-left {
+  @apply mr-1;
+}
+
+.matrix-bracket-right {
+  @apply ml-1;
+}
+
+.matrix-table {
+  @apply border-collapse;
+}
+
+.matrix-table td {
+  @apply px-3 py-2 text-center font-mono;
+  font-family: 'Computer Modern', 'Times New Roman', serif;
+}
+
+.math-step {
+  @apply my-3 pl-4 border-l-4 border-blue-300 bg-blue-50 py-2 rounded-r-lg;
+}
+
+.math-paragraph {
+  @apply my-3 leading-relaxed;
+}
+
+.math-heading-1 {
+  @apply text-2xl font-bold my-6 text-gray-900 border-b-2 border-blue-500 pb-2;
+}
+
+.math-heading-2 {
+  @apply text-xl font-bold my-5 text-gray-800;
+}
+
+.math-heading-3 {
+  @apply text-lg font-bold my-4 text-gray-700;
+}
+
+.math-list {
+  @apply my-4 space-y-2;
+}
+
+.math-list-item {
+  @apply ml-6 list-disc leading-relaxed;
+}
+
+.math-bold {
+  @apply font-bold text-gray-900;
+}
+
+.math-italic {
+  @apply italic text-gray-800;
+}
+
+.math-code {
+  @apply font-mono bg-gray-100 px-2 py-1 rounded text-sm text-red-600;
+}
+
+.math-link {
+  @apply text-blue-600 hover:text-blue-800 hover:underline font-medium;
+}
+
+.math-quote {
+  @apply border-l-4 border-gray-300 pl-4 my-4 italic text-gray-600 bg-gray-50 py-2 rounded-r-lg;
+}
+
+.math-spacer {
+  @apply my-2;
+}
+
+.math-strikethrough {
+  @apply line-through text-gray-500;
+}
+
+/* KaTeX styling overrides */
+.katex-display {
+  @apply my-6;
+  text-align: center;
+}
+
+.katex {
+  font-size: 1.1em !important;
+}
+
+.katex-display .katex {
+  font-size: 1.3em !important;
+}
+
+/* Better matrix styling */
+.katex .mord.mtable .col-align-c > .vlist-t {
+  text-align: center;
+}
+
+.katex .arraycolsep {
+  width: 0.8em;
+}
+
+/* Improve determinant and matrix bracket spacing */
+.katex .delimsizing.mult .delim-size4 {
+  margin: 0 0.2em;
+}
+
+/* Better spacing for mathematical expressions */
+.math-display-wrapper .katex-display {
+  margin: 1.5em 0;
+}
+
+.math-inline-wrapper .katex {
+  margin: 0 0.1em;
+}
+/* Dark mode support for math elements */
+@media (prefers-color-scheme: dark) {
+  .math-equation {
+    @apply bg-blue-900 border-blue-700 text-blue-100;
+  }
+  
+  .math-inline {
+    @apply bg-blue-900 border-blue-700 text-blue-100;
+  }
+  
+  .math-answer-content {
+    @apply bg-green-900 border-green-600 text-green-100;
+  }
+  
+  .math-step {
+    @apply border-blue-600 bg-blue-900 text-blue-100;
+  }
+  
+  .math-quote {
+    @apply border-gray-600 bg-gray-800 text-gray-300;
+  }
+  
+  .solution-step {
+    @apply bg-gray-800 border-gray-700;
+  }
+  
+  .step-content {
+    @apply text-gray-200;
+  }
+  
+  .math-answer-content {
+    @apply bg-gradient-to-r from-green-900 to-emerald-900 border-green-600 text-green-100;
+  }
+}
+
+/* Responsive container - UPDATED */
+.responsive-container {
+  @apply min-h-screen flex flex-col;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fix for sticky header and scrollable content - UPDATED */
+body {
+  @apply overflow-hidden;
+  height: 100vh;
+}
+
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Footer styles - UPDATED */
+footer {
+  @apply py-2 px-4 bg-white/10 backdrop-blur-sm border-t border-white/10;
+  margin-top: auto;
+}
+
+.footer-content {
+  @apply text-xs text-gray-400 flex items-center justify-center gap-1 flex-wrap;
+}
+
+.footer-link {
+  @apply text-blue-400 hover:text-blue-300 transition-colors font-medium;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
